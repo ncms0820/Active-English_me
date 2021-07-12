@@ -41,7 +41,6 @@ DJANGO_APPS = [
 PROJECT_APPS = [
     "users",
     "writings",
-    "reservations",
     "lectures",
     "books",
     "posts",
