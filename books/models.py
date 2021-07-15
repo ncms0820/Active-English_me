@@ -6,6 +6,6 @@ from core import models as core_models
 
 class Book(core_models.TimeStampedModel):
     title = models.CharField(max_length=10)
-    bookcover = models.ImageField(null=True)
+    bookcover = models.ImageField(null=True, blank=True)
     description = models.CharField(max_length=10)
     author = models.CharField(max_length=10)

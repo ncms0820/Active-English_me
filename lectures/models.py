@@ -32,5 +32,5 @@ class ActiveLecture(core_models.TimeStampedModel):
     user = models.ForeignKey(
         "users.User", related_name="ActiveLectures", on_delete=models.CASCADE)
     progress = models.FloatField()
-    start_date = models.DateField()
-    end_date = models.DateField()
+    start_date = models.DateField(null=True)
+    end_date = models.DateField(null=True)
