@@ -35,7 +35,6 @@ parse==1.18.0
 parso==0.7.1
 Pillow==8.2.0
 pluggy==0.13.1
-pycodestyle==2.7.0
 pycparser==2.20
 pydocstyle==5.1.1
 pyee==7.0.4
