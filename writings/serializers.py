@@ -9,5 +9,4 @@ class WritingSerializer(serializers.ModelSerializer):
             "user",
             "title",
             "content",
-            "likes",
         ]

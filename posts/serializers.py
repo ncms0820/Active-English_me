@@ -1,3 +1,4 @@
+from users.models import User
 from rest_framework import serializers
 from .models import Post, Comment
 
@@ -18,12 +19,12 @@ class CommentSerializer(serializers.ModelSerializer):
             'pk',
             'contents',
             'user',
+            'post'
         ]
 
 
 class PostSerializer(serializers.ModelSerializer):
-    comments = CommentSerializer(many=True)
-
+    comments = CommentSerializer(many=True, read_only=True)
     class Meta:
         model = Post
         fields = [

@@ -8,4 +8,3 @@ class Writing(core_models.TimeStampedModel):
     title = models.CharField(max_length=255, blank=False)
     content = models.TextField()
     image = models.ImageField(blank=True, null=True)
-    likes = models.ManyToManyField("users.User", blank=True)

@@ -4,6 +4,16 @@ from core import models as core_models
 
 
 class Lecture(core_models.TimeStampedModel):
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=100)
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+    teacher = models.ForeignKey(
+        "users.User", related_name="lectures", on_delete=models.CASCADE)
+    limit = models.IntegerField()
+
+
+class ActiveLecture(core_models.TimeStampedModel):
     STATUS_PENDING = "pending"
     STATUS_CONFIRMED = "confirmed"
     STATUS_CANCELED = "canceled"
@@ -17,16 +27,6 @@ class Lecture(core_models.TimeStampedModel):
     status = models.CharField(
         max_length=12, choices=STATUS_CHOICES, default=STATUS_PENDING
     )
-    title = models.CharField(max_length=100)
-    description = models.CharField(max_length=100)
-    start_time = models.TimeField()
-    end_time = models.TimeField()
-    teacher = models.ForeignKey(
-        "users.User", related_name="lectures", on_delete=models.CASCADE)
-    limit = models.IntegerField()
-
-
-class ActiveLecture(core_models.TimeStampedModel):
     lecture = models.ForeignKey(
         "Lecture", related_name="ActiveLectures", on_delete=models.CASCADE)
     user = models.ForeignKey(

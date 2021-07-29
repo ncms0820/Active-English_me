@@ -8,7 +8,7 @@ class LectureSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lecture
         fields = [
-            "status",
+            'pk',
             "title",
             "description",
             "start_time",
@@ -18,10 +18,14 @@ class LectureSerializer(serializers.ModelSerializer):
         ]
 
 
-class AlectureSerializer(serializers.ModelSerializer):
+class ActiveLectureSerializer(serializers.ModelSerializer):
     class Meta:
         model = ActiveLecture
         fields = [
+            'pk',
+            'status',
+            'lecture',
+            'user',
             "progress",
             "start_date",
             "end_date",

@@ -6,3 +6,7 @@ from . import models
 @admin.register(models.Lecture)
 class LectureAdmin(admin.ModelAdmin):
     pass
+
+@admin.register(models.ActiveLecture)
+class ActiveLectureAdmin(admin.ModelAdmin):
+    pass
