@@ -64,7 +64,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    'jackdaw000.pythonanywhere.com'
+    'jackdaw000.pythonanywhere.com',
+    'http://localhost:3000'
 ]
 
 ROOT_URLCONF = 'config.urls'
